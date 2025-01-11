@@ -31,11 +31,7 @@ class StatusController extends Controller
      */
     public function store(StoreStatusRequest $request)
     {
-        $status = new Status();
-        $status->nama_status = $request->nama_status;
-        $status->save();
-
-        return redirect()->route('status.index')->with('success', 'Status added successfully.');
+        //
     }
 
     /**
@@ -59,10 +55,7 @@ class StatusController extends Controller
      */
     public function update(UpdateStatusRequest $request, Status $status)
     {
-        $status->nama_status = $request->nama_status;
-        $status->save();
-
-        return redirect()->route('status.index')->with('success', 'Status updated successfully.');
+        //
     }
 
     /**
@@ -70,8 +63,6 @@ class StatusController extends Controller
      */
     public function destroy(Status $status)
     {
-        $status->delete();
-
-        return redirect()->route('status.index')->with('success', 'Status deleted successfully.');
+        //
     }
 }

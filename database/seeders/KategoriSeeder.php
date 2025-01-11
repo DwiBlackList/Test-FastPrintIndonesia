@@ -17,6 +17,7 @@ class KategoriSeeder extends Seeder
             ['nama_kategori' => 'L MTH AKSESORIS (IM)'],
             ['nama_kategori' => 'L MTH TABUNG (LK)'],
             ['nama_kategori' => 'SP MTH SPAREPART (LK)'],
+            ['nama_kategori' => 'L MTH AKSESORIS (LK)'],
             ['nama_kategori' => 'CI MTH TINTA LAIN (IM)'],
             ['nama_kategori' => 'S MTH STEMPEL (IM)'],
         ];

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StatusController;
 use Illuminate\Support\Facades\Route;
@@ -23,3 +24,4 @@ require __DIR__.'/auth.php';
 
 Route::resource('status', StatusController::class);
 Route::resource('kategori', KategoriController::class);
+Route::resource('produk', ProdukController::class);

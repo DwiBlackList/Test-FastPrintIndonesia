@@ -11,4 +11,9 @@ class Status extends Model
     use HasFactory;
 
     protected $fillable = ['nama_status'];
+
+    public function produks()
+    {
+        return $this->hasMany(Produk::class);
+    }
 }
