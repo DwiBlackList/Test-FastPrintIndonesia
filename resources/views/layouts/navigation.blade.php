@@ -15,6 +15,9 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('kategori.index')" :active="request()->routeIs('kategori.index')">
+                        {{ __('Kategori') }}
+                    </x-nav-link>
                     <x-nav-link :href="route('status.index')" :active="request()->routeIs('status.index')">
                         {{ __('Status') }}
                     </x-nav-link>
@@ -72,6 +75,9 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('kategori.index')" :active="request()->routeIs('kategori.index')">
+                {{ __('Kategori') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('status.index')" :active="request()->routeIs('status.index')">
                 {{ __('Status') }}
