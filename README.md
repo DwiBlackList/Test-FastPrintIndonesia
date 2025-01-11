@@ -7,60 +7,145 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# Documentation / Dokumentasi
+### Installation / Installasi
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+1. Clone Repo
+```
+git clone https://github.com/DwiBlackList/Test-FastPrintIndonesia.git
+```
+2. Composer Install
+```
+composer i
+```
+3. NPM Install
+```
+npm i
+```
+4. Make .env
+- Copy .env.example
+```
+cp .\.env.example .env
+```
+- Generate key
+```
+php artisan key:generate
+```
+- Change APP_ENV TO production
+```
+APP_ENV=production
+```
+> [!NOTE]
+> Jika APP_ENV=local ; maka Poin nomor 6 diganti dengan npm run dev
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Set up connection to database
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=test-fastprintindonesia
+DB_USERNAME=root
+DB_PASSWORD=
+```
+5. Setup Database
+- Run Migration
+```
+php artisan migrate
+```
+- Run Seeders
+```
+php artisan db:seed
+```
+6. Build CSS And JS via NPM
+```
+npm run build
+```
+7. Run Project
+```
+php artisan serve
+```
+<hr>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### About The Website
 
-## Learning Laravel
+![Bagian Awal Website.](https://i.imgur.com/QjVb3q8.png)
+Pada halaman awal diwebsite akan ditampilkan list produk dengan status "bisa dijual" sesuai dengan soal <br>
+5. Lalu tampilkan data yang hanya memiliki status " bisa dijual "<br>
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Terdapat tombol login dan register yang sebetulnya tidak diperlukan register karena login disini bertujuan untuk login admin website , bukan sebagai user / orang yang bisa berjualan diwebsite kita (layaknya e-commerce)<br>
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Selain itu telah terdapat Fitur Pencarian nama produk , Fitur Filter kategori , dan dilengkapi pagination
+![Hasil Pencarian Nama.](https://i.imgur.com/jkAMeck.png)
+> [!NOTE]
+> Hasil Pencarian
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+![Hasil Filter Kategori.](https://i.imgur.com/etQaAX5.png)
+> [!NOTE]
+> Hasil Filter Kategori
 
-## Laravel Sponsors
+![Pagination.](https://i.imgur.com/orYSJKM.png)
+> [!NOTE]
+> Pagination Pojok Kiri Bawah
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Dari sisi Admin Web<br>
+hal pertama adalah login
+![Halaman Login.](https://i.imgur.com/IeNaR7J.png)
+> [!NOTE]
+> Akun admin. Username : test@example.com , Password : password
 
-### Premium Partners
+Setelah login berhasil akan diarahkan ke halaman Dashboard
+![Halaman Dashboard.](https://i.imgur.com/IeorSNh.png)
+Pada halaman dashboard masih kosongan , hal ini biasanya di isi dengan data-data penjualan<br>
+Diatas / navigation bar telah terdapat link untuk menuju CRUD data produk , kategori , status , dan profil / log-out<br>
+setiap CRUD data memiliki kesamaan , yang paling berbeda adalah data produk , karena menggabungkan data dari tabel lain.<br>
+hanya halaman data produk juga yang memiliki fitur pencarian , dan filter.
+![Halaman Data Produk.](https://i.imgur.com/8dpwtv4.png)
+Penambahan / Pengeditan data memunculkan pop-up / modal untuk form<br>
+Validasi pada Soal "7. Untuk fitur tambah dan edit gunakan form validasi (inputan nama harus diisi, dan harga harus berupa inputan angka)" juga sudah di implementasikan melalui code controller request
+![Add Data Produk.](https://i.imgur.com/2sxXuHG.png)
+![Add Data Produk.](https://i.imgur.com/0HSsH1O.png)
+![Add Data Produk.](https://i.imgur.com/NNE648N.png)
+Edit Form
+![Edit Data Produk.](https://i.imgur.com/U6zJrAi.png)
+Penghapusan data juga telah diberikan Alert / Konfirmasi pada soal "8. Untuk fitur hapus beri alert/konfirmasi(confirm) ketika di klik hapus"
+![Edit Data Produk.](https://i.imgur.com/Vlom6Zt.png)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### About The Code
+Kode Laravel telah menggunakan MVC<br>
+Singkatnya
+```
+php artisan make:model Produk -a -r
+```
+Pada command tersebut akan membuat seluruh kebutuhan seperti file migration , controller , model , seeder , dan lainnya<br>
+Langkah-langkah
+- File Migration
+![File Migration.](https://i.imgur.com/64pKrkw.png)
+> [!NOTE]
+> Fungsi utama adalah membangun tabel
 
-## Contributing
+- File Models
+![File Models.](https://i.imgur.com/MlNUjOV.png)
+![File Models.](https://i.imgur.com/woeXGHo.png)
+![File Models.](https://i.imgur.com/GEBfFZc.png)
+> [!NOTE]
+> Berfungsi sebagai pemetaan kolom yang bisa diisi , dan object-relational mapper (ORM) / Membangun relasi antar tabel
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- File Controller
+![File Controller.](https://i.imgur.com/zuSMQLd.png)
+![File Controller.](https://i.imgur.com/8iC93R1.png)
+![File Controller.](https://i.imgur.com/AGAs3xL.png)
+![File Controller.](https://i.imgur.com/cie0z32.png)
+> [!NOTE]
+> File Controller berfungsi sebagai jembatan antara model dan view (tampilan)
 
-## Code of Conduct
+- File Request
+![File Request.](https://i.imgur.com/UxynIVj.png)
+> [!NOTE]
+> Pada File Request baik store ataupun update , disini adalah tempat untuk melakukan Validasi Form (Bisa juga dituliskan di file Controller)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- File Views
+![File Views.](https://i.imgur.com/ANIGpcA.png)
+![File Views.](https://i.imgur.com/R3W9KoN.png)
+![File Views.](https://i.imgur.com/inRUAWm.png)
+> [!NOTE]
+> Pada File Views adalah kode untuk tampilan
