@@ -8,6 +8,11 @@ use App\Http\Requests\UpdateKategoriRequest;
 
 class KategoriController extends Controller
 {
+    // Function construct agar hanya user yang sudah login yang bisa mengakses halaman ini
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      */
